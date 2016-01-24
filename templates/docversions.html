@@ -1,0 +1,73 @@
+{% extends "base.html" %} 
+
+{% block title %}SCons Documentation{% endblock %}
+
+{% block meta %}
+    <meta name="author" content="William Deegan" />
+    <meta name="description" content="SCons Documentation" />
+    <meta name="category" content="Documentation" />
+    <meta name="tags" content="Documentation" />
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <section id="content" class="body">
+                <h1 class="entry-title">Version-Specific SCons Documentation</h1>
+                <div class="entry-content">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th colspan=3>Man Page</th>
+                        <th colspan=5>User's Guide</th>
+                        <th colspan=3>API</th>
+                      </tr>
+                      <tr>
+                        <th>Version</th>
+                        <!--- Man Page -->
+                        <th>Single Page HTML</th>
+                        <th>Post Script</th>
+                        <th>Plain Text</th>
+                        <!--- Users guide -->
+                        <th>Single Page HTML</th>
+                        <th>Multi Page HTML</th>
+                        <th>PDF</th>
+                        <th>Post Script</th>
+                        <th>Plain Text</th>
+                        <!--- API -->
+                        <th>Multi Page HTML</th>
+                        <th>PDF</th>
+                        <th>Post Script</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for version in SCONS_DOC_VERSIONS %}
+                      <tr>
+                        <td>{{ version }}</td>
+                        <!--- Man Page -->
+                        <td><a class="btn btn-primary btn-sm" href="{{ SITEURL }}/doc/{{ version }}/HTML/scons-man.html">.html</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{{ SITEURL }}/doc/{{ version }}/PS/scons-man.ps">.ps</a></td>
+                        <td><a class="btn btn-warning btn-sm" href="{{ SITEURL }}/doc/{{ version }}/TEXT/scons-man.txt">.txt</a></td>
+                        <!--- Users guide -->
+                        <td><a class="btn btn-primary btn-sm" href="{{ SITEURL }}/doc/{{ version }}/HTML/scons-user.html">.html</a></td>
+                        <td><a class="btn btn-info btn-sm" href="{{ SITEURL }}/doc/{{ version }}/HTML/scons-user/index.html">.html</a></td>
+                        <td><a class="btn btn-success btn-sm" href="{{ SITEURL }}/doc/{{ version }}/PDF/scons-user.pdf">.pdf</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{{ SITEURL }}/doc/{{ version }}/PS/scons-user.ps">.ps</a></td>
+                        <td><a class="btn btn-warning btn-sm" href="{{ SITEURL }}/doc/{{ version }}/TEXT/scons-user.txt">.txt</a></td>
+                        <!--- API -->
+                        <td><a class="btn btn-info btn-sm" href="{{ SITEURL }}/doc/{{ version }}/HTML/scons-api/index.html">.html</a></td>
+                        <td><a class="btn btn-success btn-sm" href="{{ SITEURL }}/doc/{{ version }}/PDF/scons-api.pdf">.pdf</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{{ SITEURL }}/doc/{{ version }}/PS/scons-api.ps">.ps</a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+            </section>
+        </div>
+    </div> 
+</div>
+{% endblock %}
