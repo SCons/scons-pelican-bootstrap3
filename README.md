@@ -13,7 +13,7 @@ theme better in general **please don't hesitate to make a pull request**. For co
 
 First:
 
-`git clone https://github.com/DandyDev/pelican-bootstrap3.git`
+`git clone https://github.com/SCons/scons-pelican-bootstrap3.git`
 
 Then:
 
